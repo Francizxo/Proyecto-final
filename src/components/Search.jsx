@@ -1,5 +1,6 @@
 import React from 'react';
 import useSearch from '../Hooks/useSearch';
+import {Button,Row,Col, Container,Card,Navbar,Nav,Carousel} from 'react-bootstrap';
 
 function SearchResults() {
   const { query, setQuery, results } = useSearch();
@@ -13,7 +14,7 @@ function SearchResults() {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
-        <button type="submit">Search</button>
+        <button type="submit" class="btn btn-dark">Search</button>
       </form>
       {results.length > 0 && (
         <table>
@@ -38,5 +39,3 @@ function SearchResults() {
 }
 
 export default SearchResults;
-
-

@@ -1,7 +1,7 @@
 import { useState,useEffect } from 'react'
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-
+import SearchResults from '../components/Search';
 import {Button,Row,Col, Container,Card,Navbar,Nav,Carousel} from 'react-bootstrap';
 
 function Index() {
@@ -18,7 +18,7 @@ function Index() {
   
   const searchArticles = async (e) => {
     e.preventDefault();
-    const res = await axios.get(`https://newsapi.org/v2/everything?q=all&apiKey=66cc2401f8b54cdb92e90030a001350e`);
+    const res = await axios.get(`https://newsapi.org/v2/top-headlines?country=us&apiKey=08aa99e674574c1badc83e209d9eb4ea`);
     setResults(res.data.articles);
   }
   useEffect(() => {
@@ -27,7 +27,7 @@ function Index() {
 
   async function getData() {
     try {
-      const response = await axios.get('https://newsapi.org/v2/top-headlines?country=us&apiKey=66cc2401f8b54cdb92e90030a001350e');
+      const response = await axios.get('https://newsapi.org/v2/top-headlines?country=us&apiKey=08aa99e674574c1badc83e209d9eb4ea');
       console.log(response)
       setArticulos(response.data.articles)
     } catch (error) {
@@ -46,7 +46,7 @@ function Index() {
       <Nav.Link href="#Politica" onClick={() => setOpcion('Politica')}>Politica</Nav.Link>
     </Nav>
     <Nav>
-      <input type="text" placeholder="Ingrese su búsqueda" />
+      <SearchResults/>
     </Nav>
   </Container>
 </Navbar>

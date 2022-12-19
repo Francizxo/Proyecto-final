@@ -1,7 +1,8 @@
 import {Button,Row,Col, Container,Card,Navbar,Form,Image,Figure} from 'react-bootstrap';
 import { a } from 'react';
-import image from "/Users/franc/Desktop/Proyecto final react/Proyecto final/src/img/api.png"
+import image from "../img/api.png"
 import { Link,useHistory  } from 'react-router-dom';
+
 
 
 function Login() {
